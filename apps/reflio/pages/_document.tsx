@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <script async src={`${process.env.NEXT_PUBLIC_SITE_URL}/js/reflio.min.js`} data-reflio='y22f304shvmhcqq'></script>
           <script
             dangerouslySetInnerHTML={{
-              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="b408013b-e3ba-4427-8ac8-7ac2f9edccc0";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})()`
+              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="304ac773-1a5b-4aed-8232-cd84951655dd";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})()`
             }}
           />
         </Head>
