@@ -1,29 +1,29 @@
 import { useRouter } from 'next/router';
-import SetupProgress from '@/components/SetupProgress'; 
+import SetupProgress from '@/components/SetupProgress';
 import { CopyBlock, monokaiSublime } from "react-code-blocks";
-import Button from '@/components/Button'; 
-import Card from '@/components/Card'; 
-import { SEOMeta } from '@/templates/SEOMeta'; 
+import Button from '@/components/Button';
+import Card from '@/components/Card';
+import { SEOMeta } from '@/templates/SEOMeta';
 import { useCompany } from '@/utils/CompanyContext';
 
 export default function TrackingSetupPage() {
   const router = useRouter();
   const { activeCompany } = useCompany();
 
-  const embedCode = 
-  `<script async src='https://reflio.com/js/reflio.min.js' data-reflio='${router?.query?.companyId}'></script>`;
+  const embedCode =
+    `<script async src='https://simplyrefer.net/js/reflio.min.js' data-reflio='${router?.query?.companyId}'></script>`;
 
-  const scriptCode = 
-  `<script type="text/javascript">
+  const scriptCode =
+    `<script type="text/javascript">
     await Reflio.signup('yourcustomer@email.com')
 </script>`
-  
+
   return (
     <>
-      <SEOMeta title="Setup Reflio"/>
+      <SEOMeta title="Setup Reflio" />
       <div className="py-12 border-b-4 border-gray-300">
         <div className="wrapper">
-          <SetupProgress/>
+          <SetupProgress />
         </div>
       </div>
       <div className="pt-12 mb-6">
@@ -46,7 +46,7 @@ export default function TrackingSetupPage() {
                   startingLineNumber={1}
                   theme={monokaiSublime}
                   codeBlock
-                /> 
+                />
               </div>
             </div>
             <div className="mb-8">
@@ -59,10 +59,10 @@ export default function TrackingSetupPage() {
                   showLineNumbers={false}
                   theme={monokaiSublime}
                   codeBlock
-                /> 
+                />
               </div>
               {
-                activeCompany?.payment_integration_type === 'stripe' && 
+                activeCompany?.payment_integration_type === 'stripe' &&
                 <p className="text-lg mt-3">Reflio will automatically add the referral ID to an existing Stripe customer with the same email address, or later if the Stripe customer is created at a different time. When the user converts to a paying customer, Reflio will automatically create a commission if there was an eligible referral ID associated with that user.</p>
               }
               <p className="text-lg mt-4">For more detailed instructions on setting Reflio up, as well as more details on features such as Cross Sub-Domain Tracking, Auto Cookie Consent Collection, and more, visit our <a href="https://reflio.com/resources/quickstart-guide" target="_blank" rel="noreferrer" className="underline font-bold">QuickStart Guide.</a></p>
@@ -86,7 +86,7 @@ export default function TrackingSetupPage() {
                     showLineNumbers={false}
                     theme={monokaiSublime}
                     codeBlock
-                  /> 
+                  />
                 </div>
                 <p className="text-lg mt-4 mb-4"><strong>You will need to update the code to include an additional passthrough parameter which contains the Reflio referral ID, the parameter should look like this:</strong></p>
                 <div className="w-full rounded-xl text-lg overflow-hidden shadow-lg">
@@ -109,7 +109,7 @@ export default function TrackingSetupPage() {
                     showLineNumbers={false}
                     theme={monokaiSublime}
                     codeBlock
-                  /> 
+                  />
                 </div>
                 <p className="text-lg mt-4 mb-4">Using the <code className="text-lg tracking-tight font-bold text-pink-500">if typeof</code> statement, we are ensuring that the Reflio script is definitely detected, meaning we can safely run the <code className="text-lg tracking-tight font-bold text-pink-500">Reflio.getReferralId()</code> function. If no referral is found in the user&apos;s browser, this value will automatically default to <code className="text-lg tracking-tight font-bold text-pink-500">null</code>.</p>
                 <p className="text-lg">Once the checkout is complete, Reflio will automatically handle the commisssion creation via the Paddle webhooks you setup earlier.</p>

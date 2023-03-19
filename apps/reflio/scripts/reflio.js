@@ -1,4 +1,4 @@
-let ReflioDomainRoot = 'https://reflio.com';
+let ReflioDomainRoot = 'https://simplyrefer.net';
 if(window.location.href.includes('reflioTestingMode=true')){
   ReflioDomainRoot = 'http://localhost:3000';
 }

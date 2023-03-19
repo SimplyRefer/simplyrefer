@@ -82,7 +82,7 @@ export const sendEmail = async (subject, content, to, type, companyId, customId)
     
     sendSmtpEmail.subject = subjectName;
     sendSmtpEmail.htmlContent = emailHtml;
-    sendSmtpEmail.sender = {"name": companyFromId?.data?.company_name, "email":"affiliate@reflio.com"};
+    sendSmtpEmail.sender = {"name": companyFromId?.data?.company_name, "email":"affiliate@simplyrefer.net"};
     sendSmtpEmail.to = [{"email": recipient}];
     sendSmtpEmail.params = {"parameter":`${type}`,"subject":`${type}`};
     
